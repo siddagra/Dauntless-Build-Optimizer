@@ -1,0 +1,80 @@
+
+  <html>
+  <style>
+	.PerkBox
+	{
+		flex-direction: row;
+		display:flex;
+		text-transform: none;
+	}
+  	.ListPerkContainer
+	{
+		margin: 10px;
+		flex-direction: column;
+		display:flex;
+	}
+	.PerkSelected
+	{
+	position:absolute;
+		animation-name: drop;
+		animation-duration 3s;
+	}
+	@keyframes drop
+	{
+		from{transform: translateY(0)}
+		to {transform: translateY(300)}
+	}
+	</style>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+	<section>
+	
+	<div class = "PerkBox">
+	<script>
+		var CellList = [[ "AssassinsVigour", "Bloodless", "Fireproof", "Fortress", "Guardian", "Iceborne", "Insulated", "NineLives", "ShellshockResist", "Sturdy", "Tough", "Warmth" ],
+		[ "Agility", "Conditioning", "Endurance", "Evasion", "FleetFooted", "Nimble", "Swift" ],
+		["Aetherhunter", "Deconstruction", "KnockoutKing", "Overpower", "Pacifier", "Rage", "Ragehunter", "Sharpened" ],
+		[ "Acidic", "Adrenaline", "Barbed", "Bladestorm", "Cunning", "EvasiveFury", "Merciless", "Molten", "Predator", "Savagery", "WeightedStrikes", "WildFrenzy" ],
+		[ "Aetherborne", "AethericAttunement", "AethericFrenzy", "Conduit", "Energized", "Lucent", "Medic", "StunningVigour", "Vampiric" ]];
+		for(j=0; j<5; j++)
+		{
+			document.write("<div class= \"ListPerkContainer\">");
+			for(i=0; i<CellList[j].length; i++)
+				document.write("<a class=\"waves-effect waves-light btn\">"+CellList[j][i]+"</a>");
+			document.write("</div>");
+		}
+	</script>
+	</div>
+	<div class= "PerkSelected">
+	ddddeeeeeeeeeeeee
+	</div>
+        <a class="btn-floating pulse"><i class="material-icons">menu</i></a>
+<a class="btn-floating btn-large pulse"><i class="material-icons">cloud</i></a>
+<a class="btn-floating btn-large cyan pulse"><i class="material-icons">edit</i></a>
+        
+	</section>
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+	for(j=0; j<5; j++)
+	{
+		for(i=0; i<CellList[j].length; i++)
+			document.getElementsByClassName("ListPerkContainer")[j].children[i].addEventListener('click', PerkClicked)
+	}
+	
+	function PerkClicked(event){
+		(event.target).className = "btn disabled";
+	}
+	
+	</script>
+	</body>
+  </html>
